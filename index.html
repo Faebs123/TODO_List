@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO | Log-in</title>
+    <link rel="stylesheet" href="./CSS/index.css">
+</head>
+<body>
+    
+    <main class="login-container">
+        <form class="login-form" method="POST" action="./PHP/login.php">
+            <h1>Accedi</h1>
+            <p class="subtitle">Inserisci le tue credenziali per gestire le tue attività</p>
+
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input 
+                    name="username" 
+                    id="username" 
+                    type="text" 
+                    placeholder="Il tuo nome utente" 
+                    required
+                >
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input 
+                    name="password" 
+                    id="password" 
+                    type="password" 
+                    placeholder="••••••••" 
+                    required
+                >
+            </div>
+
+            <button type="submit" class="btn-submit">Accedi</button>
+        </form>
+
+        <!-- Sezione per la registrazione -->
+        <div class="register-section">
+            <p>Non hai un account?</p>
+            <a href="./HTML/signup.html" class="btn-register">Registrati</a>
+        </div>
+    </main>
+
+</body>
+</html>

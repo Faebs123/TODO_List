@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO | Registrazione</title>
+    <link rel="stylesheet" href="../CSS/index.css">
+</head>
+<body>
+    
+    <main class="login-container">
+        <form class="login-form" method="POST" action="../PHP/insert_users.php" onsubmit="check(event)">
+            <h1>Crea un account</h1>
+            <p class="subtitle">Registrati per iniziare a gestire le tue attività</p>
+
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input 
+                    name="username" 
+                    id="username" 
+                    type="text" 
+                    placeholder="Scegli un username" 
+                    autocomplete="username" 
+                    required
+                >
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input 
+                    name="password" 
+                    id="password" 
+                    type="password" 
+                    placeholder="Almeno 8 caratteri" 
+                    minlength="8"
+                    required
+                >
+            </div>
+
+            <div class="input-group">
+                <label for="confirm-password">Conferma Password</label>
+                <input 
+                    name="confirm_password" 
+                    id="confirm-password" 
+                    type="password" 
+                    placeholder="Ripeti la password"
+                    minlength="8"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="btn-submit">Registrati</button>
+        </form>
+
+        <!-- Sezione per tornare al login -->
+        <div class="register-section">
+            <p>Hai già un account?</p>
+            <a href="../index.html" class="btn-register">Accedi</a>
+        </div>
+    </main>
+
+    <script>
+        function check(event) {
+            
+            const prima = document.getElementById("password");
+            const seconda = document.getElementById("confirm-password");
+
+            if(prima.value !== seconda.value) {
+                event.preventDefault(); // blocca l'invio del form
+                alert("Le password non coincidono!");
+            }
+        }
+
+    </script>
+
+</body>
+</html>
